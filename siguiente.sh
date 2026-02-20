@@ -180,4 +180,29 @@ sed -i "17a\  }" app.ts
 
 echo "HECHO"
 echo "Ahora hemos añadido un botón de borrar a cada elemento de la lista"
+echo "Siguiente paso será: Crear vistas"
 read -p "pulsa enter para continuar" nada
+
+# Creamos las vistas para recursos y activaciones.
+
+sed -i "3c\ export const routes: Routes = [" app.routes.ts
+
+read -p "Cuántas vistas quieres crear? " num_vistas
+sed -i "3c\ export const routes: Routes = [" app.routes.ts
+
+for (( i=0; i<num_vistas; i++ ))
+do
+  read -p "Introduce el nombre de la vista $((i+1)): " nombre_vista
+  ng generate component views/$nombre_vista
+  sed -i "1a\import { $nombre_vista } from './views/$nombre_vista/$nombre_vista';" app.ts
+  echo "    {" >> app.routes.ts
+  echo "        path: '$nombre_vista'," >> app.routes.ts
+  echo "        component: $nombre_vista" >> app.routes.ts
+  echo "    }," >> app.routes.ts
+done
+echo "];" >> app.routes.ts
+
+echo "HECHO"
+echo "Ya se han creado las vistas y se han añadido a las rutas"
+echo "Mira a ver si hay que hacer push, que me da en el hocico que te has cagao encima"
+read -p "Pulsa enter para continuar" nada
