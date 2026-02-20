@@ -157,5 +157,27 @@ sed -i "4a\ }" app.html
 
 echo "HECHO"
 echo "Ahora hemos creado un nuevo componente que es una lista"
-echo "Siguiente paso será: Pues aun no lo se, pero mira a ver si hay que hacer push"
+echo "Siguiente paso será: Crear un botón de borrar elementos de la lista"
+read -p "pulsa enter para continuar" nada
+
+# Añadimos el boton al html del item-lista
+sed -i "2a\    <button (click)=\"borrarElemento()\">Borrar</button>" components/item-lista/item-lista.html
+
+# Añadimos la función borrarElemento al ts del item-lista
+sed -i "1c\import { Component, Input, Output, EventEmitter } from '@angular/core';" components/item-lista/item-lista.ts
+sed -i "10a\  @Output() eventoBorrar = new EventEmitter<string>();" components/item-lista/item-lista.ts
+sed -i "11a\  borrarElemento() {" components/item-lista/item-lista.ts
+sed -i "12a\    this.eventoBorrar.emit(this.elemento);" components/item-lista/item-lista.ts
+sed -i "13a\  }" components/item-lista/item-lista.ts
+
+# Modificamos el archivo app.html para manejar el evento de borrar elemento
+sed -i "4c\     <app-item-lista [elemento]=\"elemento\" (eventoBorrar)=\"onEventoBorrar(\$event)\"></app-item-lista>" app.html
+
+# Modificamos el archivo app.ts para manejar el evento de borrar elemento
+sed -i "15a\  onEventoBorrar(elemento: string) {" app.ts
+sed -i "16a\    this.elementos = this.elementos.filter(e => e !== elemento);" app.ts
+sed -i "17a\  }" app.ts
+
+echo "HECHO"
+echo "Ahora hemos añadido un botón de borrar a cada elemento de la lista"
 read -p "pulsa enter para continuar" nada
