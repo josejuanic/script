@@ -7,6 +7,9 @@ echo "De momento no he hecho nah pero mira a ver si hay que hacer push"
 echo "Siguiente paso será: configurar la cabecera y el pie"
 read -p "Pulsa enter para continuar" nada 
 
+#La linea esta es para darle colorcillo a cada paso, para que se vea mejor y no te pierdas, que se que eres un poco tonto
+echo -e "\e[31m--------------------------------------------------\e[0m"
+
 echo "CONFIGURANDO LAS CABECERAS Y PIE"
 
 #Modificamos el archivo app.html
@@ -37,6 +40,7 @@ echo "AHORA COMPRUEBA QUE EN EL NAVEGADOR PONE LAS MOVIDAS DE WORKS!"
 echo "siguiente paso será: Darles formato bonico" 
 echo "cuando lo compruebes y si aun no te has cagao encima"
 read -p "pulsa enter para continuar" nada
+echo -e "\e[31m--------------------------------------------------\e[0m"
 
 echo "AHORA TOCA DARLE FORMATO A LAS CABECERAS Y PIES"
 
@@ -73,6 +77,7 @@ echo "HECHO"
 echo "Cabecera y cuerpo con formato bonico, mira a ver si hay que hacer push"
 echo "Siguiente paso será: Formato al cuerpo"
 read -p "pulsa enter para continuar" nada
+echo -e "\e[31m--------------------------------------------------\e[0m"
 
 echo "AHORA VAMOS A DARLE FORMATO AL CUERPO"
 # Modificamos el archivo app.html para meter el cuerpo principal
@@ -90,6 +95,7 @@ echo "HECHO"
 
 echo "ahora vamos a hacer la cabecera reutilizable"
 read -p "pulsa enter para continuar" nada
+echo -e "\e[31m--------------------------------------------------\e[0m"
 
 # Modificamos el archivo cabecera.html para meter el titulo dinámico
 echo  "<header id=\"titulo\"> {{titulo}} </header>" > components/cabecera/cabecera.html
@@ -110,13 +116,13 @@ sed -i "10c\  @Input() titulo: string = \"TITULO DE LA PAGINA WEB\";" components
 sed -i "1c\import { Component, Input } from '@angular/core';" components/cabecera/cabecera.ts
 
 # Modificamos el archivo app.html para meter el titulo dinámico
-sed -i "1c\<app-cabecera titulo="Mi Página Web"></app-cabecera>" app.html
+sed -i "1c\<app-cabecera titulo=\"Mi Página Web\"></app-cabecera>" app.html
 
 # Modificamos el archivo app.ts para meter el titulo dinámico
-sed -i "13c\  title: string = 'Mi proyecto en Angular';" app.ts
+sed -i "13c\  title: string = \"Mi proyecto en Angular\";" app.ts
 
 # Modificamos el archivo app.html para meter el titulo dinámico a través de la variable del app.ts
-sed -i "1c\<app-cabecera [titulo]="title"> </app-cabecera>" app.html
+sed -i "1c\<app-cabecera [titulo]=\"title\"></app-cabecera>" app.html
 
 echo "HECHO"
 echo "Ahora el título de la cabecera es dinámico,"
@@ -128,6 +134,7 @@ echo "mira a ver si hay que hacer push"
 echo "Siguiente paso será: Hacer una lista"
 echo "Espero que hayas traido rosario"
 read -p "pulsa enter para continuar" nada
+echo -e "\e[31m--------------------------------------------------\e[0m"
 
 # Ahora vamos a crear un nuevo componente que es una lista
 ng generate component components/item-lista
@@ -159,6 +166,7 @@ echo "HECHO"
 echo "Ahora hemos creado un nuevo componente que es una lista"
 echo "Siguiente paso será: Crear un botón de borrar elementos de la lista"
 read -p "pulsa enter para continuar" nada
+echo -e "\e[31m--------------------------------------------------\e[0m"
 
 # Añadimos el boton al html del item-lista
 sed -i "2a\    <button (click)=\"borrarElemento()\">Borrar</button>" components/item-lista/item-lista.html
@@ -182,6 +190,7 @@ echo "HECHO"
 echo "Ahora hemos añadido un botón de borrar a cada elemento de la lista"
 echo "Siguiente paso será: Crear vistas"
 read -p "pulsa enter para continuar" nada
+echo -e "\e[31m--------------------------------------------------\e[0m"
 
 # Creamos las vistas para recursos y activaciones.
 
@@ -192,9 +201,12 @@ sed -i "3c\ export const routes: Routes = [" app.routes.ts
 
 for (( i=0; i<num_vistas; i++ ))
 do
+  echo -e "\e[31m--------------------------------------------------\e[0m"
+  echo "ACUERDATE DE PONER EL NOMBRE DE LA VISTA CON LA PRIMERA LETRA EN MAYUSCULA, QUE SI NO TE DA ERROR Y TE CAGAS ENCIMA"
+  echo -e "\e[31m--------------------------------------------------\e[0m"
   read -p "Introduce el nombre de la vista $((i+1)): " nombre_vista
   ng generate component views/$nombre_vista
-  sed -i "1a\import { $nombre_vista } from './views/$nombre_vista/$nombre_vista';" app.ts
+  sed -i "1a\import { $nombre_vista } from './views/$nombre_vista/$nombre_vista';" app.routes.ts
   echo "    {" >> app.routes.ts
   echo "        path: '$nombre_vista'," >> app.routes.ts
   echo "        component: $nombre_vista" >> app.routes.ts
@@ -206,3 +218,4 @@ echo "HECHO"
 echo "Ya se han creado las vistas y se han añadido a las rutas"
 echo "Mira a ver si hay que hacer push, que me da en el hocico que te has cagao encima"
 read -p "Pulsa enter para continuar" nada
+echo -e "\e[31m--------------------------------------------------\e[0m"
