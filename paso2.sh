@@ -206,9 +206,9 @@ do
   echo -e "\e[31m--------------------------------------------------\e[0m"
   read -p "Introduce el nombre de la vista $((i+1)): " nombre_vista
   ng generate component views/$nombre_vista
-  sed -i "1a\import { $nombre_vista } from './views/$nombre_vista/$nombre_vista';" app.routes.ts
+  sed -i "1a\import { $nombre_vista } from './views/${nombre_vista,,}/${nombre_vista,,}';" app.routes.ts
   echo "    {" >> app.routes.ts
-  echo "        path: '$nombre_vista'," >> app.routes.ts
+  echo "        path: '${nombre_vista,,}'," >> app.routes.ts
   echo "        component: $nombre_vista" >> app.routes.ts
   echo "    }," >> app.routes.ts
 done
