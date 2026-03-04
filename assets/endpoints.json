@@ -1,0 +1,12 @@
+{
+  "recursos":{
+    "base":"/rest/recursos",
+    "humanos":{
+      "base":"/rest/recursosHumanos"
+    },
+    "materiales":{
+      "base":"/rest/recursosMateriales"
+    }
+  },
+  "apiRest":"http://localhost:8080/panacea"
+}

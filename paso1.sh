@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #mensajito de bienvenida cordial y diplomatica
+cd ..
 echo "Saludo diplomático: Buenos días subnormales"
 echo "Dale matarile miniño"
 
@@ -44,6 +45,7 @@ echo "| a partir de aquí abre Visual y la carpeta del proyecto         |"
 echo "| y ejecuta el siguiente.sh                                      |"
 echo "| esta se quedara \"sirviendo\"                                  |"
 echo "|________________________________________________________________|"
+cd ../../../script
+gnome-terminal -- bash -c "./paso2.sh; exec bash"
 
 ng serve
-

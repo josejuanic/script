@@ -1,0 +1,12 @@
+.bandera {
+  height: 8px;
+  background: linear-gradient(
+    90deg,
+    #ad1519 25%,
+    #fabd00 25%,
+    #fabd00 75%,
+    #ad1519 75%
+  );
+  width: 100%;
+  margin: 0px !important;
+}

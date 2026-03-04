@@ -1,0 +1,102 @@
+{
+  "_embedded": {
+    "recursos": {
+      "humanos": [
+        {
+          "id": "1h374h238dn394dhs8",
+          "nombre": "Ana López",
+          "tipoRecurso": "HUMANO",
+          "unidad": "AGRUSAN",
+          "comunidad": "Madrid",
+          "localidad": "Pozuelo de Alarcón",
+          "base": "General Cavalcanti",
+          "activaciones": [
+            {
+              "fechaHoraInicio": "2025-01-12T08:00:00",
+              "fechaHoraFin": "2025-01-12T14:30:00",
+              "tipoJornada": "PARCIAL",
+              "tipoSituacion": "ACTIVIDAD"
+            },
+            {
+              "fechaHoraInicio": "2025-01-13T07:00:00",
+              "fechaHoraFin": "2025-01-13T15:00:00",
+              "tipoJornada": "COMPLETA",
+              "tipoSituacion": "COMISION_SERVICIO"
+            }
+          ]
+        },
+        {
+          "id": "hum-55ab-8821-kd92",
+          "nombre": "Carlos Medina",
+          "tipoRecurso": "HUMANO",
+          "unidad": "AGRUSAN",
+          "comunidad": "Madrid",
+          "localidad": "Pozuelo de Alarcón",
+          "base": "General Cavalcanti",
+          "activaciones": [
+            {
+              "fechaHoraInicio": "2025-03-10T07:00:00",
+              "fechaHoraFin": "2025-03-10T15:00:00",
+              "tipoJornada": "COMPLETA",
+              "tipoSituacion": "ACTIVIDAD"
+            },
+            {
+              "fechaHoraInicio": "2025-03-11T08:30:00",
+              "fechaHoraFin": "2025-03-11T14:00:00",
+              "tipoJornada": "PARCIAL",
+              "tipoSituacion": "FORMACION_NO_CERTIFICADA"
+            }
+          ]
+        }
+      ],
+      "materiales": [
+        {
+          "id": "mat-9034-asd92k1l",
+          "nombre": "ET 162372",
+          "tipoRecurso": "MATERIAL",
+          "unidad": "AGRUSAN",
+          "comunidad": "Madrid",
+          "localidad": "Pozuelo de Alarcón",
+          "base": "General Cavalcanti",
+          "activaciones": [
+            {
+              "fechaHoraInicio": "2025-02-03T09:15:00",
+              "fechaHoraFin": "2025-02-03T12:00:00",
+              "tipoJornada": "PARCIAL",
+              "tipoSituacion": "NO_OPERATIVO"
+            },
+            {
+              "fechaHoraInicio": "2025-02-04T10:00:00",
+              "fechaHoraFin": "2025-02-04T18:00:00",
+              "tipoJornada": "COMPLETA",
+              "tipoSituacion": "ACTIVIDAD"
+            }
+          ]
+        },
+        {
+          "id": "mat-4455-jk88-zz21",
+          "nombre": "ET 162373",
+          "tipoRecurso": "MATERIAL",
+          "unidad": "AGRUSAN",
+          "comunidad": "Madrid",
+          "localidad": "Pozuelo de Alarcón",
+          "base": "General Cavalcanti",
+          "activaciones": [
+            {
+              "fechaHoraInicio": "2025-04-02T11:00:00",
+              "fechaHoraFin": "2025-04-02T15:30:00",
+              "tipoJornada": "PARCIAL",
+              "tipoSituacion": "NO_OPERATIVO"
+            },
+            {
+              "fechaHoraInicio": "2025-04-05T09:00:00",
+              "fechaHoraFin": "2025-04-05T17:00:00",
+              "tipoJornada": "COMPLETA",
+              "tipoSituacion": "ACTIVIDAD"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

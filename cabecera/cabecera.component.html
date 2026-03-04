@@ -1,0 +1,48 @@
+<header class="header-toolbar">
+  <!-- Logo y Menú -->
+  <div class="logo-container">
+    <button
+      class="menu-button"
+      type="button"
+      aria-label="Abrir menú"
+      (click)="onMenuClick()"
+    >
+      <i class="pi pi-bars grande"></i>
+    </button>
+    <a
+      href="https://www.defensa.gob.es/"
+      target="_blank"
+      title="Página Oficial del Ministerio de Defensa"
+    >
+      <img
+        src="assets/logo_ministerio.svg"
+        class="logo-big"
+        alt="Logo Ministerio de Defensa"
+      />
+    </a>
+  </div>
+
+  <!-- Organismo -->
+  <a [href]="url" class="img_header" target="_blank" rel="noopener">
+    <div class="organismo-container">
+      <div class="organismo-top"></div>
+      <div class="organismo-bottom">
+        <span class="organismo">{{ unidad }}</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- Título -->
+  <div class="title-container">
+    <div class="title-left">
+      <img
+        src="assets/logo_tierra_color.svg"
+        class="logo-medio d-none d-sm-inline"
+        alt="Logo"
+      />
+      <span class="title">{{ titulo }}</span>
+    </div>
+  </div>
+</header>
+
+<app-bandera></app-bandera>

@@ -1,0 +1,37 @@
+.copyright {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.footer {
+  background-color: #393621;
+  color: white;
+  height: 83px;
+  padding-top: 5px;
+  text-align: center;
+}
+
+.footer-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 0px;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.logo-big {
+  aspect-ratio: 1 / 1;
+  display: block;
+  height: 70px;
+  margin-right: 6px;
+  object-fit: cover;
+  width: 151px;
+}
+
+@media (max-width: 600px) {
+  .copyright {
+    display: none;
+  }
+}

@@ -89,7 +89,7 @@ echo "<app-pie> </app-pie>" >> app.html
 
 # Modificamos el archivo app.css para darle formato al cuerpo
 echo "main{" > app.css
-echo "	height: calc(100vh - 200px)" >>app.css
+echo "	minheight: calc(100vh - 200px)" >>app.css
 echo "}" >>app.css
 echo "HECHO"
 
